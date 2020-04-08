@@ -24,11 +24,11 @@ void ThingsPH::initialize(char* user, char* password, char* key)
 
   while (!m_client.connected())
   {
-    Serial.println("Connecting to MQTT...");
+    Serial.println("Connecting...");
 
     if (m_client.connect("ESP8266Client", user, password))
     {
-      Serial.println("connected");
+      Serial.println("Connected to Things PH1");
     }
     else
     {
@@ -60,7 +60,7 @@ void ThingsPH::sendUInt8(String data_name , uint8_t data)
 
   char payload[1000];
   data_str.toCharArray(payload, 1000);
-  Serial.println("Sending post!");
+//  Serial.println("Sending post!");
  
   char key_chararray[50];
   key_str.toCharArray(key_chararray, 50);
@@ -79,7 +79,11 @@ void ThingsPH::sendUInt16(String data_name, uint16_t data)
   char payload[1000];
   data_str.toCharArray(payload, 1000);
   //  Serial.println("Sending post!");
-  m_client.publish("/ingest/v2/Kmts42SdqdLlXvy0kuR2cnVr", payload);
+    
+    
+  char key_chararray[50];
+  key_str.toCharArray(key_chararray, 50);
+  m_client.publish(key_chararray, payload);
 }
 
 void ThingsPH::sendUInt32(String data_name, uint32_t data)
@@ -94,7 +98,10 @@ void ThingsPH::sendUInt32(String data_name, uint32_t data)
   char payload[1000];
   data_str.toCharArray(payload, 1000);
   //  Serial.println("Sending post!");
-  m_client.publish("/ingest/v2/Kmts42SdqdLlXvy0kuR2cnVr", payload);
+    
+  char key_chararray[50];
+  key_str.toCharArray(key_chararray, 50);
+  m_client.publish(key_chararray, payload);
 }
 
 void ThingsPH::sendInt8(String data_name , int8_t data)
@@ -109,7 +116,10 @@ void ThingsPH::sendInt8(String data_name , int8_t data)
   char payload[1000];
   data_str.toCharArray(payload, 1000);
   //  Serial.println("Sending post!");
-  m_client.publish("/ingest/v2/Kmts42SdqdLlXvy0kuR2cnVr", payload);
+    
+  char key_chararray[50];
+  key_str.toCharArray(key_chararray, 50);
+  m_client.publish(key_chararray, payload);
 }
 
 void ThingsPH::sendInt16(String data_name, int16_t data)
@@ -124,7 +134,10 @@ void ThingsPH::sendInt16(String data_name, int16_t data)
   char payload[1000];
   data_str.toCharArray(payload, 1000);
   //  Serial.println("Sending post!");
-  m_client.publish("/ingest/v2/Kmts42SdqdLlXvy0kuR2cnVr", payload);
+  
+  char key_chararray[50];
+  key_str.toCharArray(key_chararray, 50);
+  m_client.publish(key_chararray, payload);
 }
 
 void ThingsPH::sendInt32(String data_name, int32_t data)
@@ -139,7 +152,10 @@ void ThingsPH::sendInt32(String data_name, int32_t data)
   char payload[1000];
   data_str.toCharArray(payload, 1000);
   //  Serial.println("Sending post!");
-  m_client.publish("/ingest/v2/Kmts42SdqdLlXvy0kuR2cnVr", payload);
+  
+  char key_chararray[50];
+  key_str.toCharArray(key_chararray, 50);
+  m_client.publish(key_chararray, payload);
 }
 
 void ThingsPH::sendFloat(String data_name, float data)
@@ -158,5 +174,8 @@ void ThingsPH::sendFloat(String data_name, float data)
   char payload[1000];
   data_str.toCharArray(payload, 1000);
   //  Serial.println("Sending post!");
-  m_client.publish("/ingest/v2/Kmts42SdqdLlXvy0kuR2cnVr", payload);
+  
+  char key_chararray[50];
+  key_str.toCharArray(key_chararray, 50);
+  m_client.publish(key_chararray, payload);
 }
