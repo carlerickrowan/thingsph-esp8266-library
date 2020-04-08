@@ -28,7 +28,7 @@ void ThingsPH::initialize(char* user, char* password, char* key)
 
     if (m_client.connect("ESP8266Client", user, password))
     {
-      Serial.println("Connected to Things PH1");
+      Serial.println("Connected to Things PH");
     }
     else
     {
