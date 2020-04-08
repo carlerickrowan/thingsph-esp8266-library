@@ -36,6 +36,7 @@ void setup()
 void loop()
 {
   thingsph.sendUInt8("temperature", temperature_data);
+  delay(5000);
   thingsph.sendFloat("battery", battery_data);
-  delay(10000);
+  delay(25000);
 }
