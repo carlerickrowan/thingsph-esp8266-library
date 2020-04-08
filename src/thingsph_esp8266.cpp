@@ -10,7 +10,7 @@
 */
 
 #include <Arduino.h>
-#include "thingsph.h"
+#include "thingsph_esp8266.h"
 
 String key_str;
 char lib_device_key[50];
